@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "node node_modules/dozen/bin/bin.js --start dozen.dev.js",
+    "start-prod": "node node_modules/dozen/bin/bin.js --start dozen.prod.js",
+    "build": "node node_modules/dozen/bin/bin.js dozen.dev.js",
+    "build-prod": "node node_modules/dozen/bin/bin.js dozen.prod.js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.1.0",
+    "dozen": "^0.4.0",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.8.0",
+    "postcss": "^5.0.11",
+    "postcss-extend": "^1.0.1",
+    "postcss-initial": "^1.4.0",
+    "postcss-loader": "^0.7.0"
+  }
+}
