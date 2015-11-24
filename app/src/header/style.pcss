@@ -1,0 +1,56 @@
+@import '#/src/config';
+@import '#/src/entities';
+
+.Header {
+  @extend %component;
+  padding-top: 10px;
+}
+
+.inner {
+  @extend %element;
+  width: $layout-full-width;
+  padding: 0 $layout-padding;
+  margin: auto;
+  overflow: hidden;
+}
+
+.logo {
+  @extend %element;
+  float: left;
+}
+
+.logoImage {
+  @extend %element;
+}
+
+.contacts {
+  @extend %element;
+  float: right;
+  margin-top: 27px;
+}
+
+.address {
+  @extend %element;
+  text-align: right;
+}
+
+.phone {
+  @extend %element;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.phoneCode {
+  @extend %element;
+  display: inline;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.mainMenu {
+  @extend %element;
+  float: right;
+  margin-top: 34px;
+  margin-right: 110px;
+}

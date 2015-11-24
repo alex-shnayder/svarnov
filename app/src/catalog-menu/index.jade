@@ -1,0 +1,14 @@
+- classes = require('./style')
+
+nav(class=classes.CatalogMenu)
+  ul(class=classes.list)
+    each item, itemName in items
+      if itemName === activeItem
+        li(class=[classes.listItem, classes.listItem_active])
+          span(class=classes.link)
+            | #{item.name}
+      else
+        li(class=classes.listItem)
+          a(class=classes.link href='/' + item.link)
+            | #{item.name}
+

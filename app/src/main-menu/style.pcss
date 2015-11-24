@@ -1,0 +1,42 @@
+@import '#/src/entities';
+@import '#/src/config';
+
+.MainMenu {
+  @extend %component;
+}
+
+.list {
+  @extend %element;
+  font-size: 0;
+}
+
+.listItem {
+  @extend %element;
+
+  display: inline-block;
+  margin-left: 10px;
+
+  &_active {
+    .link {
+      &, &:hover {
+        border-bottom: 2px solid $text-color;
+        cursor: text;
+      }
+    }
+  }
+}
+
+.link {
+  @extend %element;
+
+  display: block;
+  padding: 0 7px;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 400;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 1px solid;
+  }
+}

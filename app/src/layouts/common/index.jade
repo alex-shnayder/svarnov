@@ -1,0 +1,9 @@
+- Page = require('#/src/pages/' + page + '/index')
+- Header = require('#/src/header')
+- classes = require('./style')
+
+
+div(class=classes.CommonLayout)
+  != Header({ page: page })
+  div(class=classes.page)
+    != Page(locals)

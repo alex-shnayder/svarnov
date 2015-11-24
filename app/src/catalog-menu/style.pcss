@@ -1,0 +1,47 @@
+@import '#/src/entities';
+@import '#/src/config';
+
+.CatalogMenu {
+  @extend %component;
+  background: $accent-color;
+}
+
+.list {
+  @extend %element;
+  width: $layout-full-width;
+  padding: 0 $layout-padding;
+  margin: auto;
+  font-size: 0;
+}
+
+.listItem {
+  @extend %element;
+  display: inline-block;
+
+  &:first-child {
+    margin-left: -20px;
+  }
+
+  &_active {
+    .link {
+      &, &:hover {
+        background: $accent-color;
+        cursor: text;
+      }
+    }
+  }
+}
+
+.link {
+  @extend %element;
+  display: block;
+  padding: 0 20px;
+  line-height: 46px;
+  text-transform: uppercase;
+  font-weight: 900;
+  cursor: pointer;
+
+  &:hover {
+    background: #f5cc27;
+  }
+}

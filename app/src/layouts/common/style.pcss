@@ -1,0 +1,13 @@
+@import '#/src/config';
+@import '#/src/entities';
+
+.CommonLayout {
+  @extend %component;
+}
+
+.page {
+  @extend %element;
+  width: $layout-full-width;
+  padding: 0 $layout-padding;
+  margin: auto;
+}

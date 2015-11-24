@@ -1,0 +1,21 @@
+- MainMenu = require('#/src/main-menu')
+- CatalogMenu = require('#/src/catalog-menu')
+- classes = require('./style')
+- pages = require('#/content/pages')
+- catalog = require('#/content/catalog')
+
+header(class=classes.Header)
+  div(class=classes.inner)
+    a(class=classes.logo href="/")
+      img(class=classes.logoImage src=require('./logo.png') alt="Сварнов")
+    div(class=classes.contacts)
+      p(class=classes.address)
+        | Томск, ул.&nbsp;Смирнова, 5б
+      p(class=classes.phone)
+        span(class=classes.phoneCode)
+          | +7&nbsp;3822
+        | &nbsp;979-029
+    div(class=classes.mainMenu)
+      != MainMenu({ items: pages, activeItem: page })
+
+  != CatalogMenu({ items: catalog, activeItem: page })
