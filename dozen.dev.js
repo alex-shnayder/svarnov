@@ -1,5 +1,7 @@
 'use strict';
 
+var punycode = require('punycode');
+
 module.exports = {
   input: {
     path: __dirname + '/app',
@@ -11,7 +13,14 @@ module.exports = {
   },
   server: {
     port: 3000,
-    hotReload: true
+    hotReload: true,
+    middleware: [
+      function(req, res, next) {
+        req.url = decodeURI(req.url);
+        next();
+      },
+      require('hygienist-middleware')('build')
+    ]
   },
   scripts: {
     output: 'assets/client.js',
@@ -26,11 +35,32 @@ module.exports = {
     mode: 'extract',
     compress: false,
     modules: true,
-    postcss: [
-      require('postcss-initial')(),
-      require('postcss-extend')(),
-      require('autoprefixer')()
-    ]
+    postcss: function(webpack) {
+      return [
+        require('postcss-import')({
+          addDependencyTo: webpack,
+          resolve: function(id, opts) {
+            var rootPath = webpack.options.dozen.config.input.path;
+            var rootAlias = webpack.options.dozen.config.resolve.rootAlias;
+
+            opts.extensions = webpack.options.resolve.extensions;
+
+            if (id.substr(0, rootAlias.length) === rootAlias) {
+              id = require('path').join(rootPath, id.substr(rootAlias.length));
+            }
+
+            return require('resolve').sync(id, opts);
+          }
+        }),
+        require('postcss-advanced-variables')(),
+        require('postcss-color-function')(),
+        require('postcss-extend')(),
+        require('postcss-nested')(),
+        require('postcss-calc')(),
+        require('postcss-initial')(),
+        require('autoprefixer')()
+      ];
+    }
   },
   images: {
     output: 'assets/[name].[ext]',
@@ -40,7 +70,13 @@ module.exports = {
   fonts: {
     output: 'assets/[name].[ext]'
   },
-  processWebpackConfig: function(webpackConfig) {
+  processWebpackConfig: function(webpackConfig, config) {
+    webpackConfig.module.loaders.push({
+      test: /\.json$/,
+      loader: 'json'
+    });
+    webpackConfig.resolve.extensions.push('.json');
+
     return webpackConfig;
   }
 };
