@@ -1,7 +1,5 @@
 'use strict';
 
-var punycode = require('punycode');
-
 module.exports = {
   input: {
     path: __dirname + '/app',
