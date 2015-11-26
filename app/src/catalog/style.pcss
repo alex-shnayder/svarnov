@@ -1,0 +1,27 @@
+@import '#/src/config';
+@import '#/src/entities';
+
+.Catalog {
+  @extend %component;
+}
+
+.list {
+  @extend %element;
+  overflow: hidden;
+}
+
+.listItem {
+  @extend %element;
+  width: 48.5%;
+  float: left;
+  margin-top: 3%;
+
+  &:nth-child(1),
+  &:nth-child(2) {
+    margin-top: 0;
+  }
+
+  &:nth-child(2n) {
+    margin-left: 3%;
+  }
+}

@@ -1,0 +1,11 @@
+- classes = require('./style')
+- maxItems = compact ? 5 : Infinity
+
+ol(class=[classes.Specs, compact ? classes.Specs_compact : ''])
+  each item, index in specs
+    if (!compact || index < maxItems)
+      li(class=classes.item)
+        span(class=classes.itemCaption)= item.caption
+        if (item.value)
+          = ': '
+          span(class=classes.itemValue)= item.value

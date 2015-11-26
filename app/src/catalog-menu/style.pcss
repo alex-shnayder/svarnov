@@ -8,19 +8,15 @@
 
 .list {
   @extend %element;
+  display: table;
   width: $layout-full-width;
-  padding: 0 $layout-padding;
   margin: auto;
   font-size: 0;
 }
 
 .listItem {
   @extend %element;
-  display: inline-block;
-
-  &:first-child {
-    margin-left: -20px;
-  }
+  display: table-cell;
 
   &_active {
     .link {
@@ -36,10 +32,12 @@
   @extend %element;
   display: block;
   padding: 0 20px;
+  text-align: center;
   line-height: 46px;
-  text-transform: uppercase;
   font-weight: 900;
+  text-transform: uppercase;
   cursor: pointer;
+  transition: background 0.2s;
 
   &:hover {
     background: #f5cc27;

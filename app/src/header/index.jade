@@ -1,8 +1,6 @@
 - MainMenu = require('#/src/main-menu')
 - CatalogMenu = require('#/src/catalog-menu')
 - classes = require('./style')
-- pages = require('#/content/pages')
-- catalog = require('#/content/catalog')
 
 header(class=classes.Header)
   div(class=classes.inner)
@@ -18,4 +16,4 @@ header(class=classes.Header)
     div(class=classes.mainMenu)
       != MainMenu({ items: pages, activeItem: page })
 
-  != CatalogMenu({ items: catalog, activeItem: page })
+  != CatalogMenu({ items: categories, activeItem: page })

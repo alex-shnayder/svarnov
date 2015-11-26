@@ -1,0 +1,55 @@
+@import '#/src/config';
+@import '#/src/entities';
+
+.ProductCard {
+  @extend %component;
+}
+
+.ProductCard_interactive {
+  .inner {
+    cursor: pointer;
+
+    &:hover {
+      border-color: $accent-color;
+    }
+  }
+}
+
+.inner {
+  @extend %element;
+  padding: 10px 15px 13px;
+  overflow: hidden;
+  border: 1px solid #e6e6e6;
+  transition: border-color 0.15s;
+}
+
+.image {
+  @extend %element;
+  float: left;
+  width: 160px;
+}
+
+.info {
+  @extend %element;
+  margin-left: 180px;
+}
+
+.categoryName {
+  @extend %element;
+  color: #6a6a6a;
+}
+
+.title {
+  @extend %element;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.description {
+  @extend %element;
+}
+
+.specs {
+  @extend %element;
+  margin-top: 7px;
+}

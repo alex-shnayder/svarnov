@@ -4,6 +4,6 @@
 
 
 div(class=classes.CommonLayout)
-  != Header({ page: page })
-  div(class=classes.page)
+  != Header({ page: page, pages: store.pages(), categories: store.categories() })
+  main(class=classes.page)
     != Page(locals)

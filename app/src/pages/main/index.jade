@@ -1,4 +1,18 @@
+- heading = require('#/src/heading')
+- catalog = require('#/src/catalog')
 - classes = require('./style')
 
+- hotItems = [];
+
+for categoryItems in store.items()
+  -
+    hotCategoryItems = categoryItems.filter(function(item) {
+      return item.isHot;
+    });
+    hotItems = hotItems.concat(hotCategoryItems);
+
 div(class=classes.MainPage)
-  h1 Main page
+  div(class=classes.heading)
+    != heading({ text: 'Популярные товары' })
+  div(class=classes.hotItems)
+    != catalog({ items: hotItems })

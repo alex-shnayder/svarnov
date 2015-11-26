@@ -1,0 +1,19 @@
+- Specs = require('#/src/specs')
+- classes = require('./style')
+
+mixin inner
+  if (interactive)
+    a(class=classes.inner href=product.fullLink)
+      block
+  else
+    div(class=classes.inner)
+      block
+
+article(class=[classes.ProductCard, interactive ? classes.ProductCard_interactive : ''])
+  +inner
+    img(class=classes.image src=product.images[0] alt=product.fullName)
+    div(class=classes.info)
+      p(class=classes.categoryName)= product.categoryName
+      h1(class=classes.title)= product.shortName
+      div(class=classes.specs)
+        != Specs({ specs: product.specs, compact: true })
