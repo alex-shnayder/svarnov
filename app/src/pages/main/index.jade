@@ -1,6 +1,7 @@
 - heading = require('#/src/heading')
 - catalog = require('#/src/catalog')
 - classes = require('./style')
+- containerClasses = require('#/src/container')
 
 - hotItems = [];
 
@@ -12,7 +13,8 @@ for categoryItems in store.items()
     hotItems = hotItems.concat(hotCategoryItems);
 
 div(class=classes.MainPage)
-  div(class=classes.heading)
-    != heading({ text: 'Популярные товары' })
-  div(class=classes.hotItems)
-    != catalog({ items: hotItems })
+  div(class=containerClasses.container)
+    div(class=classes.heading)
+      != heading({ text: 'Популярные товары' })
+    div(class=classes.hotItems)
+      != catalog({ items: hotItems })
