@@ -1,0 +1,17 @@
+- classes = require('./style')
+
+table(class=classes.Schedule)
+  thead(class=classes.days)
+    td(class=classes.day)
+      | Будни
+    td(class=classes.day)
+      | Суббота
+    td(class=[classes.day, classes.day_off])
+      | Воскресенье
+  tbody(class=classes.time)
+    td(class=classes.timeSpan)
+      | 8:30 — 19:00
+    td(class=classes.timeSpan)
+      | 9:00 — 16:00
+    td(class=[classes.timeSpan, classes.timeSpan_off])
+      | выходной

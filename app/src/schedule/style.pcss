@@ -1,0 +1,40 @@
+@import '#/src/config';
+@import '#/src/entities';
+
+.Schedule {
+  @extend %component;
+  display: table;
+  margin: 0 -20px;
+  border-spacing: 20px 0;
+}
+
+.days {
+  @extend %element;
+  display: table-header-group;
+}
+
+.time {
+  @extend %element;
+  display: table-row-group;
+}
+
+.day,
+.timeSpan {
+  @extend %element;
+  display: table-cell;
+  padding: 0 6px 6px;
+}
+
+.day {
+  border-bottom: 2px solid $accent-color;
+
+  &_off {
+    border-bottom-color: $error-color;
+  }
+}
+
+.timeSpan {
+  padding-top: 5px;
+  padding-bottom: 0;
+  font-size: 18px;
+}

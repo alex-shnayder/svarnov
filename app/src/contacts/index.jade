@@ -1,0 +1,19 @@
+- classes = require('./style')
+
+ul(class=classes.Contacts)
+  li(class=classes.item)
+    p(class=classes.itemCaption)
+      | Адрес
+    p(class=classes.itemValue)
+      | г. Томск, ул. Смирнова, 5б, строение 1
+  li(class=classes.item)
+    p(class=classes.itemCaption)
+      | Телефон
+    p(class=classes.itemValue)
+      | +7 3822 979-029
+  li(class=classes.item)
+    p(class=classes.itemCaption)
+      | Электронная почта
+    p(class=classes.itemValue)
+      a(class=classes.email href="mailto:svarnov.tomsk@yandex.ru")
+        | svarnov.tomsk@yandex.ru

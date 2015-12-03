@@ -1,0 +1,41 @@
+@import '#/src/config';
+@import '#/src/entities';
+
+.Contacts {
+  @extend %component;
+}
+
+.item {
+  @extend %element;
+
+  & + & {
+    margin-top: 15px;
+  }
+}
+
+.itemIcon {
+  @extend %element;
+  display: inline;
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+.itemCaption {
+  @extend %element;
+  color: $muted-text-color;
+}
+
+.itemValue {
+  @extend %element;
+  font-size: 18px;
+}
+
+.email {
+  @extend %element;
+  display: inline;
+  font: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
