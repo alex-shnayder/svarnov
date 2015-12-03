@@ -10,7 +10,7 @@ module.exports = {
     file: null
   },
   server: {
-    port: 3000,
+    port: 80,
     hotReload: false,
     middleware: [
       function(req, res, next) {
