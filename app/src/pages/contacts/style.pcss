@@ -1,0 +1,39 @@
+@import '#/src/config';
+@import '#/src/entities';
+
+.ContactsPage {
+  @extend %component;
+}
+
+.heading {
+  @extend %element;
+  margin-top: 20px;
+}
+
+.container {
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.contacts {
+  @extend %element;
+  float: left;
+}
+
+.schedule {
+  @extend %element;
+  float: right;
+}
+
+.scheduleHeading {
+  @extend %element;
+  padding-left: 6px;
+  margin-bottom: 10px;
+  color: $muted-text-color;
+}
+
+.map {
+  @extend %element;
+  height: 400px;
+  margin-top: 30px;
+}

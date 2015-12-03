@@ -1,0 +1,21 @@
+- Heading = require('#/src/heading')
+- Contacts = require('#/src/contacts')
+- Schedule = require('#/src/schedule')
+- Map = require('#/src/map')
+- classes = require('./style')
+- containerClasses = require('#/src/container')
+
+
+div(class=classes.ContactsPage)
+  div(class=containerClasses.container)
+    div(class=classes.heading)
+      != Heading({ text: 'Контакты' })
+    div(class=classes.container)
+      div(class=classes.contacts)
+        != Contacts()
+      div(class=classes.schedule)
+        p(class=classes.scheduleHeading)
+          | Режим работы
+        != Schedule()
+  div(class=classes.map)
+    != Map()

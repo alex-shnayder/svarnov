@@ -1,0 +1,14 @@
+- heading = require('#/src/heading')
+- catalog = require('#/src/catalog')
+- classes = require('./style')
+- containerClasses = require('#/src/container')
+
+- categoryObj = store.categories()[category];
+- items = store.items()[category];
+
+div(class=classes.CategoryPage)
+  div(class=containerClasses.container)
+    div(class=classes.heading)
+      != heading({ text: categoryObj.name })
+    div(class=classes.items)
+      != catalog({ items: items })
