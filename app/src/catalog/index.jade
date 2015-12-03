@@ -5,4 +5,4 @@ div(class=classes.Catalog)
   ol(class=classes.list)
     each item in items
       li(class=classes.listItem)
-        != productCard({ product: item, interactive: false })
+        != productCard({ product: item, interactive: false, showCategory: true })

@@ -11,9 +11,10 @@ mixin inner
 
 article(class=[classes.ProductCard, interactive ? classes.ProductCard_interactive : ''])
   +inner
-    img(class=classes.image src=product.images[0] alt=product.fullName)
+    div(class=classes.imageContainer)
+      img(class=classes.image src=product.images[0] alt=product.fullName)
     div(class=classes.info)
-      p(class=classes.categoryName)= product.categoryName
+      p(class=classes.categoryName)= product.category.itemName
       h1(class=classes.title)= product.shortName
       div(class=classes.specs)
         != Specs({ specs: product.specs, compact: true })

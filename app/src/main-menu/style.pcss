@@ -19,7 +19,8 @@
   &_active {
     .link {
       &, &:hover {
-        border-bottom: 2px solid $text-color;
+        border-bottom-width: 2px;
+        border-bottom-color: $text-color;
         cursor: text;
       }
     }
@@ -34,9 +35,10 @@
   font-size: 15px;
   line-height: 28px;
   font-weight: 400;
+  border-bottom: 1px solid transparent;
   cursor: pointer;
 
   &:hover {
-    border-bottom: 1px solid;
+    border-bottom-color: $text-color;
   }
 }

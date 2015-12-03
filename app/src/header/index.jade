@@ -5,15 +5,16 @@
 header(class=classes.Header)
   div(class=classes.inner)
     a(class=classes.logo href="/")
-      img(class=classes.logoImage src=require('./logo.png') alt="Сварнов")
+      img(class=classes.logoImage src=require('./logo.png').replace(/\\/g, '/') alt="Сварнов" width="222" height="103")
+    div(class=classes.mainMenu)
+      div(class=classes.mainMenuInner)
+        != MainMenu({ items: pages, activeItem: page })
     div(class=classes.contacts)
       p(class=classes.address)
-        | Томск, ул.&nbsp;Смирнова, 5б
+        | Томск, ул.&nbsp;Смирнова, 5б, стр.&nbsp;1
       p(class=classes.phone)
         span(class=classes.phoneCode)
           | +7&nbsp;3822
         | &nbsp;979-029
-    div(class=classes.mainMenu)
-      != MainMenu({ items: pages, activeItem: page })
 
   != CatalogMenu({ items: categories, activeItem: page })

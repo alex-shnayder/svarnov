@@ -8,37 +8,56 @@
 
 .inner {
   @extend %element;
-  width: $layout-full-width;
-  padding: 0 $layout-padding;
+  display: table;
+  width: $layout-width;
+  min-height: 103px;
   margin: auto;
   overflow: hidden;
 }
 
 .logo {
   @extend %element;
-  float: left;
+  display: table-cell;
+  vertical-align: bottom;
+  width: 0;
 }
 
 .logoImage {
   @extend %element;
 }
 
+.mainMenu {
+  @extend %element;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+}
+
+.mainMenuInner {
+  @extend %element;
+  display: inline-block;
+}
+
 .contacts {
   @extend %element;
-  float: right;
-  margin-top: 27px;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .address {
   @extend %element;
   text-align: right;
+  white-space: nowrap;
 }
 
 .phone {
   @extend %element;
+  text-align: right;
   font-size: 26px;
   font-weight: 700;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .phoneCode {
@@ -46,11 +65,4 @@
   display: inline;
   font-size: 17px;
   font-weight: 700;
-}
-
-.mainMenu {
-  @extend %element;
-  float: right;
-  margin-top: 34px;
-  margin-right: 110px;
 }
