@@ -23,7 +23,7 @@ module.exports = {
   scripts: {
     output: 'assets/client.js',
     compress: false,
-    sourceMaps: true
+    sourceMaps: false
   },
   templates: {
     compress: false
