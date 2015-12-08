@@ -2,8 +2,7 @@
 - Header = require('#/src/header')
 - classes = require('./style')
 
-
 div(class=classes.CommonLayout)
-  != Header({ page: page, pages: store.pages(), categories: store.categories() })
+  != Header({ page: page, pages: store.pages(), category: category, categories: store.categories() })
   main(class=classes.page)
     != Page(locals)
