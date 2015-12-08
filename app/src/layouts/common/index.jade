@@ -1,8 +1,11 @@
 - Page = require('#/src/pages/' + page + '/index')
 - Header = require('#/src/header')
+- Footer = require('#/src/footer')
 - classes = require('./style')
 
 div(class=classes.CommonLayout)
   != Header({ page: page, pages: store.pages(), category: category, categories: store.categories() })
   main(class=classes.page)
     != Page(locals)
+  div(class=classes.footer)
+    != Footer({ page: page })
