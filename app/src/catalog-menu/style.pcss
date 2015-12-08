@@ -21,7 +21,7 @@
   &_active {
     .link {
       &, &:hover {
-        background: $accent-color;
+        background: color($accent-color whiteness(+ 32%));
         cursor: text;
       }
     }
@@ -40,6 +40,6 @@
   transition: background 0.2s;
 
   &:hover {
-    background: #f5cc27;
+    background: color($accent-color whiteness(+ 23%));
   }
 }
