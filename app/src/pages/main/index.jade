@@ -1,5 +1,6 @@
-- heading = require('#/src/heading')
-- catalog = require('#/src/catalog')
+- Banner = require('#/src/banner')
+- Heading = require('#/src/heading')
+- Catalog = require('#/src/catalog')
 - classes = require('./style')
 - containerClasses = require('#/src/container')
 
@@ -13,8 +14,9 @@ for categoryItems in store.items()
     hotItems = hotItems.concat(hotCategoryItems);
 
 div(class=classes.MainPage)
+  != Banner()
   div(class=containerClasses.container)
     div(class=classes.heading)
-      != heading({ text: 'Популярные товары' })
+      != Heading({ text: 'Популярные товары' })
     div(class=classes.hotItems)
-      != catalog({ items: hotItems })
+      != Catalog({ items: hotItems })
