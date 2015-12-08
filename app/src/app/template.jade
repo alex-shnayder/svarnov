@@ -4,19 +4,19 @@
 
 doctype html
 html(lang="ru", class=classes.App)
-head
-  meta(charset="UTF-8")
-  title Сварнов
+  head
+    meta(charset="UTF-8")
+    title Сварнов
 
-  //- link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700")
 
-  if assets.styles
-    each stylesheet in assets.styles
-      link(rel="stylesheet", href=stylesheet)
+    if assets.styles
+      each stylesheet in assets.styles
+        link(rel="stylesheet", href=stylesheet)
 
-body(class=classes.body)
-  != Layout(locals)
+  body(class=classes.body)
+    != Layout(locals)
 
-  if assets.scripts
-    each script in assets.scripts
-      script(src=script)
+    if assets.scripts
+      each script in assets.scripts
+        script(src=script)
