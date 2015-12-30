@@ -1,0 +1,15 @@
+@import '#/src/config';
+@import '#/src/entities';
+
+.Link {
+  @extend %component;
+  display: inline;
+  font-size: inherit;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: border-bottom-color 0.12s;
+
+  &:hover {
+    border-bottom-color: currentColor;
+  }
+}
