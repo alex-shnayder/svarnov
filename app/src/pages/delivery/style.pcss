@@ -1,0 +1,34 @@
+@import '#/src/entities';
+
+.DeliveryPage {
+  @extend %component;
+  padding-top: 20px;
+}
+
+.heading {
+  @extend %element;
+}
+
+.text {
+  @extend %element;
+  margin-top: 20px;
+}
+
+.items {
+  @extend %element;
+  margin-top: 30px;
+  font-size: 0;
+}
+
+.item {
+  @extend %element;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 30px;
+  vertical-align: top;
+
+  &:nth-child(2n+1) {
+    padding-right: 30px;
+  }
+}

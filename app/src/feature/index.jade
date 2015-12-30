@@ -1,0 +1,8 @@
+- Icon = require('#/src/icon')
+- classes = require('./style')
+
+div(class=classes.Feature)
+  div(class=classes.icon)
+    != Icon({ type: icon })
+  p(class=classes.text)
+    != text

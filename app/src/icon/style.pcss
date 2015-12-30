@@ -1,0 +1,42 @@
+@import '#/src/config';
+@import '#/src/entities';
+
+@font-face {
+    font-family: 'icons';
+    src: url('./icons.ttf') format('truetype'),
+         url('./icons.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.Icon {
+  @extend %component;
+  display: inline-block;
+
+  /* !important is to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: none;
+  font-size: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  color: inherit;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &_plane:before {
+      content: "\e900";
+  }
+  &_person:before {
+      content: "\e901";
+  }
+  &_business:before {
+      content: "\e902";
+  }
+  &_truck:before {
+      content: "\e903";
+  }
+}

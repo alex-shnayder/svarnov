@@ -1,0 +1,21 @@
+@import '#/src/config';
+@import '#/src/entities';
+
+.Feature {
+  @extend %component;
+  font-size: 0;
+  overflow: hidden;
+}
+
+.icon {
+  @extend %element;
+  float: left;
+  color: $accent-color;
+  font-size: 36px;
+  line-height: 1;
+}
+
+.text {
+  @extend %element;
+  margin-left: 56px;
+}

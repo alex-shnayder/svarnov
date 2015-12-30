@@ -1,0 +1,26 @@
+- Heading = require('#/src/heading')
+- Feature = require('#/src/feature')
+- Link = require('#/src/link')
+- classes = require('./style')
+- containerClasses = require('#/src/container')
+
+
+div(class=classes.DeliveryPage)
+  div(class=containerClasses.container)
+    div(class=classes.heading)
+      != Heading({ text: 'Доставка и оплата' })
+
+    p(class=classes.text) 
+      | Вы можете выбрать и&nbsp;купить товар лично в&nbsp;нашем магазине по&nbsp;адресу г.&nbsp;Томск, ул.&nbsp;Смирнова, 5б, строение&nbsp;1 или&nbsp;заказать по&nbsp;телефону +7&nbsp;3822&nbsp;979-029. Пожалуйста, уточняйте условия оплаты и&nbsp;доставки у&nbsp;нашего оператора.
+    
+    div(class=classes.items)
+      div(class=classes.item)
+        != Feature({ icon: 'truck', text: 'По&nbsp;Томску и&nbsp;Северску наши курьеры доставляют покупки по&nbsp;будням с&nbsp;9 до&nbsp;17 часов.<br>Стоимость доставки по&nbsp;Томску — 200&nbsp;₽, по&nbsp;Северску — 500&nbsp;₽, а&nbsp;при&nbsp;заказе на&nbsp;сумму от&nbsp;7000&nbsp;₽ — бесплатно.' })
+      div(class=classes.item)
+        - dellinLink = Link({ address: 'http://www.dellin.ru', text: 'Деловые линии' })
+        - ratekLink = Link({ address: 'http://www.rateksib.ru', text: 'Ратэк' })
+        != Feature({ icon: 'plane', text: 'В&nbsp;другие города России мы отправляем наш товар транспортными компаниями ' + dellinLink + ' и&nbsp;' + ratekLink + '. В&nbsp;этом случае стоимость доставки рассчитывается индивидуально.' })
+      div(class=classes.item)
+        != Feature({ icon: 'person', text: 'Частные лица могут оплатить товар наличными или&nbsp;банковской картой.' })
+      div(class=classes.item)
+        != Feature({ icon: 'business', text: 'Юридическим лицам доступен безналичный расчёт переводом на&nbsp;банковский счёт в&nbsp;течение трёх дней после покупки. Для выставления счёта нам нужно знать точное название организации и&nbsp;телефон контактного лица.' })
