@@ -1,6 +1,9 @@
 - Layout = require('#/src/layouts/' + layout + '/index')
 - classes = require('./style')
 
+- title = (store.pages()[page] || store.categories()[category]).name
+- title = (title === 'Главная') ? 'Сварнов — Сварочное оборудование в Томске' : title + ' — Сварнов';
+
 
 doctype html
 html(lang="ru", class=classes.App)
@@ -8,7 +11,7 @@ html(lang="ru", class=classes.App)
     meta(charset="UTF-8")
     meta(name="viewport" content="width=1000")
 
-    title Сварнов
+    title= title
 
     link(rel="icon" href=require('file!./favicon.ico') type="image/x-icon")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700")
