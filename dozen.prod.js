@@ -31,7 +31,7 @@ module.exports = {
   styles: {
     output: 'assets/styles.css',
     mode: 'extract',
-    compress: true,
+    compress: false,
     modules: true,
     postcss: function(webpack) {
       return [
