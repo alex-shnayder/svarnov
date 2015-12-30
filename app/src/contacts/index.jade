@@ -1,3 +1,4 @@
+- Link = require('#/src/link')
 - classes = require('./style')
 
 ul(class=classes.Contacts)
@@ -15,5 +16,4 @@ ul(class=classes.Contacts)
     p(class=classes.itemCaption)
       | Электронная почта
     p(class=classes.itemValue)
-      a(class=classes.email href="mailto:svarnov.tomsk@yandex.ru")
-        | svarnov.tomsk@yandex.ru
+      != Link({ address: 'mailto:svarnov.tomsk@yandex.ru', text: 'svarnov.tomsk@yandex.ru' })
