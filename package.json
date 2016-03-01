@@ -1,13 +1,10 @@
 {
   "scripts": {
-    "start": "node node_modules/dozen/bin/bin.js --start dozen.dev.js",
-    "start-prod": "node node_modules/dozen/bin/bin.js --start dozen.prod.js",
-    "build": "node node_modules/dozen/bin/bin.js dozen.dev.js",
-    "build-prod": "node node_modules/dozen/bin/bin.js dozen.prod.js"
+    "dozen": "node node_modules/dozen/bin/bin.js"
   },
   "devDependencies": {
     "autoprefixer": "^6.1.0",
-    "dozen": "^0.5.0",
+    "dozen": "^0.6.1",
     "hygienist-middleware": "^0.1.0",
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",

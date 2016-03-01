@@ -1,17 +1,19 @@
 'use strict';
 
+var prod = (process.env.NODE_ENV === 'production');
+
 module.exports = {
+  hotReload: false,
   input: {
     path: __dirname + '/app',
     file: 'app.js'
   },
   output: {
     path: __dirname + '/build',
-    file: null
+    file: prod ? null : 'app.js'
   },
   server: {
-    port: 80,
-    hotReload: false,
+    port: prod ? 80 : 3000,
     middleware: [
       function(req, res, next) {
         req.url = decodeURI(req.url);
@@ -22,11 +24,11 @@ module.exports = {
   },
   scripts: {
     output: 'assets/client.js',
-    compress: true,
+    compress: prod,
     sourceMaps: false
   },
   templates: {
-    compress: true
+    compress: prod
   },
   styles: {
     output: 'assets/styles.css',
@@ -61,20 +63,11 @@ module.exports = {
     }
   },
   images: {
-    output: 'assets/[hash].[ext]',
-    compress: true,
+    output: prod ? 'assets/[hash].[ext]' : 'assets/[name].[ext]',
+    compress: prod,
     makeProgressive: false
   },
   fonts: {
-    output: 'assets/[hash].[ext]'
-  },
-  processWebpackConfig: function(webpackConfig, config) {
-    webpackConfig.module.loaders.push({
-      test: /\.json$/,
-      loader: 'json'
-    });
-    webpackConfig.resolve.extensions.push('.json');
-
-    return webpackConfig;
+    output: prod ? 'assets/[hash].[ext]' : 'assets/[name].[ext]'
   }
 };
