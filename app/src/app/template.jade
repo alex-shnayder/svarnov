@@ -1,4 +1,5 @@
 - Layout = require('#/src/layouts/' + layout + '/index')
+- Metrika = require('#/src/yandex-metrika')
 - classes = require('./style')
 
 - title = (store.pages()[page] || store.categories()[category]).name
@@ -21,6 +22,7 @@ html(lang="ru", class=classes.App)
         link(rel="stylesheet", href=stylesheet)
 
   body(class=classes.body)
+    != Metrika
     != Layout(locals)
 
     if assets.scripts
