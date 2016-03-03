@@ -11,6 +11,10 @@ module.exports.categories = function categories() {
   return require('./content/categories');
 };
 
+module.exports.specialOffers = function specialOffers() {
+  return require('./content/specialOffers');
+};
+
 module.exports.items = function items() {
   var categories = this.categories();
   return Object.keys(categories).reduce(function(items, categoryId) {

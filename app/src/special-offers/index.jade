@@ -1,0 +1,5 @@
+- classes = require('./style')
+
+section(class=classes.SpecialOffers)
+  each offer in offers
+    img(class=classes.offer src=offer.image alt=offer.text)
